@@ -1,4 +1,4 @@
-package com.algorithm.yanggiyeol;
+package YangGiYeol;
 
 
 public class Test_20180610 {
