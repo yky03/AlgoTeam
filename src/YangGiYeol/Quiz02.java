@@ -6,7 +6,7 @@ public class Quiz02 {
 		String answer = "";
 		for(int i=0; i<seoul.length; i++) {
 			if(seoul[i].equals("Kim")) {
-				System.out.println("김서방은 "+String.valueOf(i)+"에 ");
+				System.out.println("김서방은 "+String.valueOf(i)+"에 있다");
 			}
 		}
 		
