@@ -6,7 +6,7 @@ public class Quiz02 {
 		String answer = "";
 		for(int i=0; i<seoul.length; i++) {
 			if(seoul[i].equals("Kim")) {
-				System.out.println("±è¼­¹æÀº "+String.valueOf(i)+"¿¡ ÀÖ´Ù");
+				System.out.println("ê¹€ì„œë°©ì€ "+String.valueOf(i)+"ì— ");
 			}
 		}
 		
