@@ -1,0 +1,25 @@
+class Solution
+{
+    public int solution(int [][]board){
+        int answer = 0;
+		int x, y = 0;
+		y = board.length;
+		x = board[0].length;
+		for (int i = 1; i < x; i++) {
+			for (int j = 1; j < y; j++) {
+				if (board[j][i] == 1) {
+					board[j][i] = Math.min(board[j - 1][i], Math.min(board[j][i - 1], board[j - 1][i - 1])) + 1;
+				}
+			}
+		}
+
+		for (int[] line : board) {
+			for (int n : line) {
+				answer = Math.max(answer, n);
+			}
+		}
+		
+		answer = answer * answer;
+        return answer;
+    }
+}
