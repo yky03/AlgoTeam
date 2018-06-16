@@ -1,0 +1,41 @@
+class Solution
+{
+    public int solution(int [][]board){
+        int answer = 0;
+		int x, y = 0;
+		
+		y = board.length;
+		x = board[0].length;
+		
+		for (int i = 0; i < x; i++) {
+			for (int j = 0; j < y; j++) {
+				answer = Math.max(answer, checkMaxSquare(i, j, x, y, board,));
+			}
+		}
+		
+		return answer;
+	}
+
+	public static int checkMaxSquare(int i, int j, int x, int y, int[][] board ,int max) {
+		int ret = 0;
+		boolean flag = true;
+		for (ret = 0; ret <= Math.min(x - i - 1, y - j - 1 ); ret++) {
+
+			// 정사각형 검증
+			for (int l = 0; l <= ret; l++) {
+				for (int m = 0; m <= ret; m++) {
+					if (board[j + m][i + l] == 0) {
+						flag = false;
+					}
+				}
+			}
+			
+			if(!flag) {
+				return ret*ret;
+			}
+			
+		}
+		return (ret) * (ret);
+	}
+
+}

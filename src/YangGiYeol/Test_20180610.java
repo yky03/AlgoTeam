@@ -1,14 +1,16 @@
 package YangGiYeol;
+
+
 public class Test_20180610 {
 	public static void main(String[] args) {
 		
-		String name = "¾ç±â¿­";
+		String name = "ï¿½ï¿½â¿­";
 		String age = "27";
-		String job = "À¥°³¹ßÀÚ";
+		String job = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 		
-		System.out.println("ÀÌ¸§ : "+name);
-		System.out.println("³ªÀÌ : "+age);
-		System.out.println("Á÷¾÷ : "+job);
+		System.out.println("ï¿½Ì¸ï¿½ : "+name);
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ : "+age);
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ : "+job);
 		
 	}
 }
