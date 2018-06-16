@@ -15,7 +15,7 @@ board		answer
   0 1 1 1
   1 1 2 2
   1 2 2 3
-  0	1 2 3   max = 3
+  0 1 2 3      max = 3
 */
 
 function solution(board) {
@@ -28,8 +28,8 @@ function solution(board) {
 		for (var x = 0; x < lengthY; x++) {
 			for (var y = 0; y < lengthX; y++) {
 				if (board[x][y] == 1) {
-                    max = 1;
-                }
+                    			max = 1;
+		                }
 			}
 		}
 	} else {
