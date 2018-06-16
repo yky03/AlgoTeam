@@ -12,11 +12,11 @@ public class Quiz01 {
 			answer = scan.nextLine();
 		}
 		
-		//±æÀÌ°¡ Â¦¼ö¸é /2-1 + /2°¡  ÀÎµ¦½º 
+		//ê¸¸ì´ê°€ ì§ìˆ˜ë©´ /2-1 + /2ê°€  ì¸ë±ìŠ¤ 
 		if(answer.length()%2 ==0) {
 			answer = String.valueOf(answer.charAt(answer.length()/2-1)) + String.valueOf(answer.charAt(answer.length()/2));
 		} 
-		//±æÀÌ°¡ È¦¼ö¸é /2 °¡ ÀÎµ¦½º
+		//ê¸¸ì´ê°€ í™€ìˆ˜ë©´ /2 ê°€ ì¸ë±ìŠ¤
 		else {
 			answer = String.valueOf(answer.charAt(answer.length()/2));
 		}
