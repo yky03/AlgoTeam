@@ -35,15 +35,15 @@
 function solution(n) {
     var answer = 0;
     
-    answer = jumpCase(n);
-
+//    answer = jumpCase(n);
+    var a = jumpCase(n);
+    
     return answer;
 }
 
 
-// 재귀를 사용하면 시간초과 발생
 function jumpCase(num) {
-	if (num == 1 || num < 1) return 1;
+	if (num == 1) return 1;
 	else if (num == 2) return 2;
 	
 	return jumpCase(num - 1) + jumpCase(num - 2);
