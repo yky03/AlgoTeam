@@ -20,12 +20,10 @@
 
 function solution(s, n) {
     var answer = '';
-    
-    var splitToString = s.split("");
 
     for (var i = 0; i < s.length; i++) {
-    	if (splitToString[i] == " ") {
-    		answer += splitToString[i];
+    	if (s == " ") {
+    		answer += s;
     	} else {
     		answer += String.fromCharCode((s.charCodeAt(i) > 90) 
         			? (s.charCodeAt(i) + n - 97) % 26 + 97 
@@ -33,17 +31,6 @@ function solution(s, n) {
     	}
     }
     
-    
-//    splitToString.forEach((char, i) => {
-//    	if (char == " ") {
-//    		answer += char;
-//    	} else {
-//        	answer += String.fromCharCode((s.charCodeAt(i) > 90) 
-//        			? (s.charCodeAt(i) + n - 97) % 26 + 97 
-//        			: (s.charCodeAt(i) + n - 65) % 26 + 65); 
-//    	}
-//    });
-
     return answer;
 }
 
