@@ -1,4 +1,4 @@
-package Sanggi;
+
 
 import java.util.Scanner;
 
@@ -21,7 +21,7 @@ public class q4SPassword {
 				 tmpChar.setCharAt(i, ' ');
 			}
 			else if(s.charAt(i)=='z'){
-				inx =n-i;
+				//java.lang.Error inx =n-i;
 				tmpChar.setCharAt(i, alpa[i+n]);
 			}
 			else if(s.charAt(i)=='Z'){
