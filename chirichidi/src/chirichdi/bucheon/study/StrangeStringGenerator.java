@@ -29,6 +29,10 @@ public class StrangeStringGenerator {
                 {
                     sb.append((char)(asciiOfChar-32));
                 }
+                else
+                {
+                    sb.append((char)(asciiOfChar));
+                }
             }
             else
             {
@@ -36,10 +40,15 @@ public class StrangeStringGenerator {
                 {
                     sb.append((char)(asciiOfChar+32));
                 }
+                else
+                {
+                    sb.append((char)(asciiOfChar));
+                }
             }
 
             if (s.charAt(i) == ' ')
             {
+                sb.append((char)(asciiOfChar));
                 j = 0;
             }
         }
