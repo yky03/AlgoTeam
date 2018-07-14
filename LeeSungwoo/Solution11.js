@@ -25,10 +25,10 @@ function solution(s){
     	answer = false;
     } else {
         for (var i = 0; i < s.length; i++) {
-        	if (s[i] === '(') {
+        	if (s[i] === '(') {  // FIXME: 다른 괄호가 추가되었을 경우도 가능한 경우로 수정
         		stack.push(s[i]);
         	} else {
-        		if (dict[stack.pop()] !== ')') {
+        		if (dict[stack.pop()] !== ')') {  // FIXME: js가 아닌 경우 stack에 pop할거 있는지 우선체크
         			answer = false;
         			break;
         		}
