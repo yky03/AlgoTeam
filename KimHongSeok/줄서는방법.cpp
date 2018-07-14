@@ -2,19 +2,15 @@
 #include <vector>
 #include <cstdio>
 using namespace std;
-
-vector<int> ans;
-
-bool check[21];
 long long factorials(int n)
 {
-	int ret = 1;
+	long long ret = 1;
 	for(int i = 1; i <= n ; i++)
 		ret = ret * i;
 
 	return ret;
 }
-void recursive(int n, long long k,vector<int> v){
+void recursive(int n, long long k,vector<int> v,vector<int>& ans){
 	if(n == 0)
 		return ;
 	long long ret = 0;
@@ -22,11 +18,13 @@ void recursive(int n, long long k,vector<int> v){
 	long long cmp = 1;
 	for(int i=1;i<=n;i++){
 		if( (cmp <= k) && (k < cmp + tmp) )
-		{
-			printf("%d ",v[i-1]);
+		{   
+			//          printf("%d ",v[i-1]);
+			ans.push_back(v[i-1]);
 			v.erase(v.begin()+i-1);
-			
-			recursive(n-1,k-cmp+1,v);
+
+			recursive(n-1,k-cmp+1,v,ans);
+			break;
 			//recursive call
 		}
 		cmp = cmp+tmp;
@@ -34,15 +32,11 @@ void recursive(int n, long long k,vector<int> v){
 	return ;
 }
 
-int main()
-{
+vector<int> solution(int n, long long k) {
+	vector<int> answer;
 	vector<int> v;
-	v.push_back(1);
-	v.push_back(2);
-	v.push_back(3);
-	v.push_back(4);
-	recursive(4,6,v);
-
-
-	return 0;
+	for(int i = 1; i<=n ; i++)
+		v.push_back(i);
+	recursive(n,k,v,answer);
+	return answer;
 }
