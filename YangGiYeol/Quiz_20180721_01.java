@@ -1,13 +1,8 @@
 
 public class Quiz_20180721_01 {
 	public static void main(String[] args) {
-
-		for(int i=0; i<10; i++) {
-			System.out.println(fibo(i));
-		}
-		
+			System.out.println(fibo(1000));
 	}
-	
 	
 	static int[] tempMemo = new int[2000];
 	public static int fibo(int n) {
@@ -18,7 +13,7 @@ public class Quiz_20180721_01 {
 		} else if(n==2) {
 			return tempMemo[n] = 2;
 		} else {
-			return tempMemo[n] = fibo(n-1)+fibo(n-2);  
+			return tempMemo[n] = (fibo(n-1)+fibo(n-2))%1234567;  
 		}
 	}
 	
