@@ -11,29 +11,40 @@
  */
 
 
-// 순열
+// 순열 알고리즘
 
-function solution(n, k) {
-    var answer = [];
-    
-    
-    for (var i = 1; i <= n; i++) { // n번 재귀 
-    	answer.push(permutate([], i, n, k));	
-    }
-    
-    console.log('answer: ', answer);
-    return answer;
+function permutate(n) {
+	if(n === 0) {
+		return 1;
+	}
+	
+	return permutate(n-1) * n;
 }
 
 
-function permutate(list, num, n, k) {
-	if (n == 0) return list;
-	
-	list.push(num); // 시작 수 고정
-	
-	return permutate(list, num+1, n-1, k-1);
-}
+console.log(permutate(5));
+
+//function solution(n, k) {
+//    var answer = [];
+//    
+//    
+//    for (var i = 1; i <= n; i++) { // n번 재귀 
+//    	answer.push(permutate([], i, n, k));	
+//    }
+//    
+//    console.log('answer: ', answer);
+//    return answer;
+//}
+//
+//
+//function permutate(list, num, n, k) {
+//	if (n == 0) return list;
+//	
+//	list.push(num); // 시작 수 고정
+//	
+//	return permutate(list, num+1, n-1, k-1);
+//}
 
 
 
-solution(3, 5);
+//solution(3, 5);
