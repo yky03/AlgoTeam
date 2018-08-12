@@ -38,7 +38,7 @@ public class Quiz_20180811_01 {
 		for(int i=1; i<array.length; i++) {
 			max = (array[i] >= max) ? array[i] : max;
 		}
-		return max;
+		 return max;
 	}
 	
 	
