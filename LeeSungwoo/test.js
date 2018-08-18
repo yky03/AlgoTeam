@@ -1,2 +1,1 @@
-ddd
 console.log("test");
