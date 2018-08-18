@@ -36,7 +36,7 @@ function solution(n, area) {
 
 function dfs(x, area) {
 	for (let i = 0; i < x; i++) {
-		checkList[i] = true;
+		checkList[x] = true;
 		if (checkList[i] === false && area[x][i] === 1) {
 			dfs(i, area);
 		}
