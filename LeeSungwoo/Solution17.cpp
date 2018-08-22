@@ -18,18 +18,12 @@ int areaMaximumValue = 0;
 
 int area[MAX_VALUE][MAX_VALUE];
 int safeArea[MAX_VALUE][MAX_VALUE];
-// int convertAreaArr[MAX_VALUE][MAX_VALUE];
-// bool visitArea[MAX_VALUE][MAX_VALUE];
 
 // 좌우상하 이동 상수
 const int locationX[4] = {1, -1, 0, 0};
 const int locationY[4] = {0, 0, -1, 1};
 
 int main() {
-	// visitArea 모두 false로 초기화
-	// memset(visitArea, false, sizeof(visitArea));
-
-	// input
 	scanf("%d", &n);
 
 	for (int i = 0; i < n; i++) {
