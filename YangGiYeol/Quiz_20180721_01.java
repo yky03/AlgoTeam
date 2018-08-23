@@ -1,5 +1,5 @@
 
-public class Quiz_20180721_01 {
+ public class Quiz_20180721_01 {
 	public static void main(String[] args) {
 			System.out.println(fibo(1000));
 	}
