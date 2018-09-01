@@ -1,0 +1,74 @@
+﻿import java.util.Scanner;
+
+//https://www.acmicpc.net/problem/2468
+public class Boj_20180818_DFSBFS_2468 {
+	public static void main(String[] args) {
+		
+		 //0.입력받기
+		Scanner scan = new Scanner(System.in);
+		int N = scan.nextInt();
+		int[][] safetyZone = new int[N][N]; //실제높이
+		boolean[][] checkZone = new boolean[N][N]; //안전영역 체크
+		boolean[][] tempZone = new boolean[N][N]; //안전영역 초깃값 저장
+		
+		int count = 0;
+		int result = -1;
+		int height = 0;
+		//1 1 2 4 5 5 4
+		while(result <= count){
+			count = 0;
+			for(int i=0; i<N; i++) {
+				for(int j=0; j<N; j++) {
+					safetyZone[i][j] = scan.nextInt();
+				}
+			}
+			
+			//1.안전한 영역 찾기(높이 찾기)
+			
+			for(int i=0; i<N; i++) {
+				for(int j=0; j<N; j++) {
+					if(safetyZone[i][j] > height) { 
+						checkZone[i][j] = true; 
+						tempZone [i][j] = true;
+					}
+				}
+			}
+			
+			/*for(int i=0; i<N; i++) {
+				for(int j=0; j<N; j++) {
+					System.out.print(checkZone[i][j]+" ");
+				}
+				System.out.println();
+			}*/
+			
+			//2.안전한 영역에서 근접한 행오른쪽 안전영역 삭제(삭제하는 열의 안전영역이 있으면 같이 삭제)
+			for(int i=0; i<N; i++) {
+				for(int j=0; j<N; j++) {
+					if(j>0) {
+						if(tempZone[i][j]==true && tempZone[i][j-1] == tempZone[i][j]) {
+							checkZone[i][j] = false; //중복행영역 제거(오른쪽것 제거)
+						}
+					}
+					if(i>0) {
+						if(tempZone[i][j] == tempZone[i-1][j]) 
+							checkZone[i-1][j] = false; //중복열영역 제거(위의것 제거)
+					}
+				}
+			}
+			
+			
+			for(int i=0; i<N; i++) {
+				for(int j=0; j<N; j++) {
+					if(checkZone[i][j] == true) count++;
+				}
+			}
+		
+			
+			result = count;
+			height++;
+		} 
+		
+		System.out.println("결과"+result);
+		
+	}
+}
