@@ -11,7 +11,7 @@ public class SecretMap {
 
         String[] ret;
 
-        Main main = new Main();
+        SecretMap main = new SecretMap();
         ret = main.solution2(n, arr1, arr2);
     }
 
