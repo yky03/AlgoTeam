@@ -1,14 +1,10 @@
-
-public class Quiz_20180901_01 {
-	public static void main(String[] args) {
-		
-		int n = 5;
-		int[] arr1 = {9,20,28,18,11};
-		int[] arr2 = {30,1,21,17,28};
+class Solution {
+  public String[] solution(int n, int[] arr1, int[] arr2) {
 		
 		String[] temp1 = new String[n];
 		String[] temp2 = new String[n];
 		String[] answer = new String[n];
+		
 		
 		for(int i=0; i<n; i++) {
 			answer[i] = "";
@@ -23,6 +19,9 @@ public class Quiz_20180901_01 {
 				answer[i] += xorCheck(temp1[i].charAt(j) , temp2[i].charAt(j));
 			}
 		}
+      
+        return answer;
+		
 
 	}
 	
@@ -37,6 +36,5 @@ public class Quiz_20180901_01 {
 		if(a=='1' || b=='1') return "#";
 		else return " ";
 	}
-	
 	
 }
