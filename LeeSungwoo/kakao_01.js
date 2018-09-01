@@ -29,7 +29,9 @@ function addZero(digits, data) {
   const zero = '0';
   
   if (data.length !== digits) {
-    for (let i = 0, len = digits - data.length; i < len; i++) {
+    const len = digits - data.length;
+    
+    for (let i = 0; i < len; i++) {
       data = zero + data;
     }
   }
