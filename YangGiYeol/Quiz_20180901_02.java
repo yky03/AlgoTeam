@@ -1,15 +1,10 @@
-
-public class Quiz_20180901_02 {
-	public static void main(String[] args) {
-		
-		String[] strs = pointCheck("1D2S#10S");
-		int[] result = new int[3];
-		System.out.println(strs[0]);
-		System.out.println(strs[1]);
-		System.out.println(strs[2]);
-		
-		
-		for(int i=0; i<3; i++) {
+class Solution {
+  public int solution(String dartResult) {
+    
+    String[] strs = pointCheck(dartResult);
+	int[] result = new int[3];
+      
+      for(int i=0; i<3; i++) {
 			if(strs[i].contains("#")) {
 				result[i] = sumCheck(strs[i])*(-1); 
 			} else if(strs[i].contains("*")) {
@@ -19,12 +14,11 @@ public class Quiz_20180901_02 {
 				result[i] = sumCheck(strs[i]);
 			}
 		}
-
-		System.out.println(result[0]+result[1]+result[2]);
-		
-	}
-	
-	public static String[] pointCheck(String str) {
+      
+      return result[0]+result[1]+result[2];
+  }
+    
+    public static String[] pointCheck(String str) {
 		int answer = 0;
 		int temp = 0 ;
 		String[] strs = {"","",""};
@@ -58,7 +52,5 @@ public class Quiz_20180901_02 {
 		
 		return n;
 	}
-	
-	
-	
+    
 }
