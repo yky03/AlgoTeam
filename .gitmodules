@@ -1,0 +1,3 @@
+[submodule "chirichidi"]
+	path = chirichidi
+	url = https://github.com/chirichidi/algorythm_java.git
