@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class Quiz_20180811_01 {
 	public static void main(String[] args) {
 
-		long answer = 0;
+		 long answer = 0;
 		
 		int n = 5;
 		int [] works = {1,1};

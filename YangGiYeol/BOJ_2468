@@ -1,10 +1,10 @@
-import java.util.Scanner;
+﻿import java.util.Scanner;
 
 //https://www.acmicpc.net/problem/2468
 public class Boj_20180818_DFSBFS_2468 {
 	public static void main(String[] args) {
 		
-		//0.입력받기
+		 //0.입력받기
 		Scanner scan = new Scanner(System.in);
 		int N = scan.nextInt();
 		int[][] safetyZone = new int[N][N]; //실제높이
