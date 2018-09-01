@@ -6,12 +6,10 @@ public class DartGame {
 
         //given
         String s = "1S2D*3T";
-        String s2 = "1D2S#10S";
-
         int ret;
 
         DartGame main = new DartGame();
-        ret = main.solution2(s2);
+        ret = main.solution2(s);
     }
 
     // 점수/보너스/[옵션]
@@ -49,11 +47,12 @@ public class DartGame {
                     preScore = curScore;
                     break;
                 default: // 점수
-                    preScore = curScore;//TODO 옵션에서 한번 갱신하기때문에 분기처리해야하나
+                    preScore = curScore;
 
                     //curScore 최대값 10. 규칙상 점수 다음에 out of index 안나므로 규칙 이용한 처리
                     if (i > 0 && dartResult.substring(i - 1, i).matches("[-+]?\\d*\\.?\\d+"))
                     {
+                        preScore *= 10;
                         curScore = 10;
                     }
                     else
