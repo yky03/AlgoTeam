@@ -1,3 +1,4 @@
+//첫번째 풀이
 class Solution {
   public int solution(String dartResult) {
       
@@ -7,12 +8,19 @@ class Solution {
 		
 		for(int i=0; i<dartResult.length(); i++) {
              if(temp>2) temp--;
-			 group[temp] = (strCheck(dartResult.charAt(i))) ? group[temp]+String.valueOf(dartResult.charAt(i)) : group[temp++] + String.valueOf(dartResult.charAt(i));
+			 group[temp] = (strCheck(dartResult.charAt(i))) 
+                  ? group[temp]+String.valueOf(dartResult.charAt(i)) : group[temp++] + String.valueOf(dartResult.charAt(i));
 		}
 		
 		for(int i=1; i<group.length; i++) {
-			if(group[i].contains("#") && group[2].charAt(group[2].length()-1)!='#') { group[i]=group[i].replaceAll("#", ""); group[i-1]+="#";}
-			else if(group[i].contains("*") && group[2].charAt(group[2].length()-1)!='*') { group[i]=group[i].replaceAll("\\*", ""); group[i-1]+="*";}
+			if(group[i].charAt(0) == '#' ) {
+					group[i]=group[i].replaceFirst("#", "");
+					group[i-1]+="#";
+			}
+			else if(group[i].charAt(0) == '*' ) {
+					group[i]=group[i].replaceFirst("\\*", "");
+					group[i-1]+="*";
+			}
 		}
 		
 		for(int i=0; i<3; i++) {
