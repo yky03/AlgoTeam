@@ -1,43 +1,37 @@
 class Solution {
   public int solution(String dartResult) {
-    
-    String[] strs = pointCheck(dartResult);
-	int[] result = new int[3];
       
-      for(int i=0; i<3; i++) {
-			if(strs[i].contains("#")) {
-				result[i] = sumCheck(strs[i])*(-1); 
-			} else if(strs[i].contains("*")) {
-				result[i] = sumCheck(strs[i])*2; 
+     String[] group = {"","",""};
+		int[] result = new int[3];
+		int temp = 0;
+		
+		for(int i=0; i<dartResult.length(); i++) {
+             if(temp>2) temp--;
+			 group[temp] = (strCheck(dartResult.charAt(i))) ? group[temp]+String.valueOf(dartResult.charAt(i)) : group[temp++] + String.valueOf(dartResult.charAt(i));
+		}
+		
+		for(int i=1; i<group.length; i++) {
+			if(group[i].contains("#") && group[2].charAt(group[2].length()-1)!='#') { group[i]=group[i].replaceAll("#", ""); group[i-1]+="#";}
+			else if(group[i].contains("*") && group[2].charAt(group[2].length()-1)!='*') { group[i]=group[i].replaceAll("\\*", ""); group[i-1]+="*";}
+		}
+		
+		for(int i=0; i<3; i++) {
+			if(group[i].contains("#")) {
+				result[i] = sumCheck(group[i])*(-1); 
+			} else if(group[i].contains("*")) {
+				result[i] = sumCheck(group[i])*2; 
 				if(i>0) result[i-1]=result[i-1]*2;
 			} else {
-				result[i] = sumCheck(strs[i]);
+				result[i] = sumCheck(group[i]);
 			}
 		}
       
       return result[0]+result[1]+result[2];
   }
     
-    public static String[] pointCheck(String str) {
-		int answer = 0;
-		int temp = 0 ;
-		String[] strs = {"","",""};
-		
-		for(int i=0; i<str.length(); i++) {
-			if(gihoCheck(str.charAt(i))){
-				strs[temp] += str.charAt(i);
-			} else { 
-				    if(i!=0 && temp<2) ++temp;
-					strs[temp] += str.charAt(i); 
-			}
-		}
-		
-		return strs;
-	}
-	
-	public static boolean gihoCheck(char x) {
-		if(x=='S' || x=='D' || x=='T' || x=='*' || x=='#') return true;
-		else return false;
+    public static boolean strCheck(char x) {
+		if(x=='S' || x=='D' || x=='T') return false;
+		else return true;
 	}
 	
 	public static int sumCheck(String str) {
@@ -52,5 +46,4 @@ class Solution {
 		
 		return n;
 	}
-    
 }
