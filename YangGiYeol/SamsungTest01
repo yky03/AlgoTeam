@@ -1,0 +1,85 @@
+
+public class SamsungTest01 {
+	
+	static int cleanCount = 0;
+	public static void main(String[] args) {
+		
+		//case1
+		/*int N = 3; //세로크기
+		int M = 3; //가로크기
+		int r = 1; //x좌표
+		int c = 1; //y좌표
+		int d = 0; //로봇청소기가 바라보는 방향 0:북 1:동 2:남 3:서 
+		
+		int[][] field = {
+				{1, 0, 1},
+				{1, 0, 1},
+				{1, 1, 1}
+				};*/
+
+		/*//case2
+		int N = 11; //세로크기
+		int M = 10; //가로크기
+		int r = 7; //x좌표
+		int c = 4; //y좌표
+		int d = 0; //로봇청소기가 바라보는 방향 0:북 1:동 2:남 3:서 
+		
+		int[][] field = {
+				{1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+				{1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+				{1, 0, 0, 0, 1, 1, 1, 1, 0, 1},
+				{1, 0, 0, 1, 1, 0, 0, 0, 0, 1},
+				{1, 0, 1, 1, 0, 0, 0, 0, 0, 1},
+				{1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+				{1, 0, 0, 0, 0, 0, 0, 1, 0, 1},
+				{1, 0, 0, 0, 0, 0, 1, 1, 0, 1},
+				{1, 0, 0, 0, 0, 0, 1, 1, 0, 1},
+				{1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+				{1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+				};*/
+		
+		System.out.println(cleanCheck(field,N,M,r,c,d));
+		
+	}
+	
+	public static int cleanCheck(int[][] field,int N,int M,int r,int c,int d) {
+		
+		//r,c,동서남북 체크후 loop false
+		boolean loop = true;
+		// 0->3 , 3->2 , 2->1 , 1->0 ...
+		while(loop) {
+			
+			if(field[r][c]==0) {
+				cleanCount+=1;
+				field[r][c] = 2; //청소완료
+			}
+			
+			if(d==0) { 
+				d=3;
+				if(field[r][c-1]==0) {
+					c-=1;
+				}
+			} else if(d==1) {
+				d=0;
+				if(field[r-1][c]==0) {
+					r-=1;
+				}
+			} else if(d==2) {
+				d=1;
+				if(field[r][c+1]==0) {
+					c+=1;
+				}
+			} else if(d==3) {
+				d=2;
+				if(field[r+1][c]==0) {
+					r+=1;
+				}
+			}
+		}
+		
+			
+		return cleanCount;
+	}
+	
+	
+}
