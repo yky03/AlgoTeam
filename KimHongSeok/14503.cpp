@@ -32,7 +32,7 @@ void go(int y, int x, int d)
 			}
 		}
 		d = nd;
-
+ 
 		if (i == 3)	// 모두 청소되어있거나 벽인경우,
 		{
 			int by = y + dy[(nd + 2) % 4];	// 후진
