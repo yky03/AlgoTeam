@@ -4,7 +4,7 @@ public class SamsungTest01 {
 	static int cleanCount = 0;
 	public static void main(String[] args) {
 		
-		//case1
+		 //case1
 		/*int N = 3; //세로크기
 		int M = 3; //가로크기
 		int r = 1; //x좌표
